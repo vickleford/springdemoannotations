@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class RugbyCoach implements Coach {
+    @Autowired
     private FortuneService fortuneService;
 
     public String getDailyWorkout() {
@@ -13,10 +14,5 @@ public class RugbyCoach implements Coach {
 
     public String getDailyFortune() {
         return fortuneService.getFortune();
-    }
-
-    @Autowired
-    public void setFortuneService(FortuneService fs) {
-        fortuneService = fs;
     }
 }
