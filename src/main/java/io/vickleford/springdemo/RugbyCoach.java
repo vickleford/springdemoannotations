@@ -6,9 +6,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class RugbyCoach implements Coach {
-    @Autowired
-    @Qualifier("randomFortuneService")
     private FortuneService fortuneService;
+
+    @Autowired
+    public RugbyCoach(@Qualifier("happyFortuneService") FortuneService fs) {
+        fortuneService = fs;
+    }
 
     public String getDailyWorkout() {
         return "HURRRRGH! get tougher!";
