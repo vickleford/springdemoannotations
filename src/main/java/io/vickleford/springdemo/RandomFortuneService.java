@@ -6,7 +6,12 @@ import java.util.Random;
 
 @Component
 public class RandomFortuneService implements FortuneService {
-    private String[] fortunes;
+    private String[] fortunes = {
+            "happy random fortune",
+            "sad random fortune",
+            "thoughtful random fortune",
+            "financial random fortune"
+    };
 
     public RandomFortuneService() {
         fortunes = new String[]{
